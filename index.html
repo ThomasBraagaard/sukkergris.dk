@@ -5,26 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>sukkergris.dk</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
-      min-height: 100vh;
       background-color: #ffc1d9;
       background-image: url("gris.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
+      background-attachment: fixed;
       background-blend-mode: multiply;
       color: #3cb371;
       font-family: Arial, sans-serif;
+    }
+
+    /* Menu i venstre side */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 180px;
+      height: 100vh;
+      box-sizing: border-box;
+      padding: 30px 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 10;
+    }
+    nav a {
+      color: #3cb371;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Indhold flyttes til højre for menuen */
+    main {
+      margin-left: 180px;
+    }
+    section {
+      min-height: 100vh;
+      box-sizing: border-box;
+      padding: 40px 30px;
+    }
+
+    /* Forside */
+    #hjem {
       text-align: center;
     }
-    h2 {
+    h1 {
       margin: 0;
       padding-top: 20px;
+      font-size: 28px;
+    }
+    #hjem p {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    /* Om og kontakt */
+    #om, #kontakt {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    #om h2, #kontakt h2 {
+      margin-top: 0;
+    }
+
+    /* Mobil: menuen flyttes op i toppen */
+    @media (max-width: 600px) {
+      nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding: 12px;
+      }
+      main {
+        margin-left: 0;
+        padding-top: 50px;
+      }
     }
   </style>
 </head>
 <body>
-  <h2>sukkergris.dk</h2>
-</body>
-</html>
+
+  <nav>
+    <a href="#hjem">Sukkergris</a>
+    <a href="#om">Om</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <main>
+    <section id="hjem">
+      <h1>sukkergris.dk</h1>
+      <p>Det er slut. Aldrig mere sukker. Kun gulerødder og glutenfrit brød.</p>
+    </section>
+
+    <section id="om">
+      <h2>Om</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Her kan du kontakte os. Dette er en testtekst, som senere erstattes med rigtige oplysninger.</p>
+      <p>E-mail: navn@eksempel.dk</p>
