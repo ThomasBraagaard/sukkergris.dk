@@ -11,14 +11,25 @@
     body {
       margin: 0;
       background-color: #ffc1d9;
+      color: #3cb371;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Fast baggrund bag alle sektioner (virker også på iPhone) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #ffc1d9;
       background-image: url("gris.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      background-attachment: fixed;
       background-blend-mode: multiply;
-      color: #3cb371;
-      font-family: Arial, sans-serif;
     }
 
     /* Menu i venstre side */
@@ -122,3 +133,9 @@
       <h2>Kontakt</h2>
       <p>Her kan du kontakte os. Dette er en testtekst, som senere erstattes med rigtige oplysninger.</p>
       <p>E-mail: navn@eksempel.dk</p>
+      <p>Telefon: 12 34 56 78</p>
+    </section>
+  </main>
+
+</body>
+</html>
